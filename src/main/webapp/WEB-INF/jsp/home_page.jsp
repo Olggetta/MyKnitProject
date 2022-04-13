@@ -1,18 +1,20 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> <!--библиотека Jsp для исп. циклов-->
 
-<c:if test="${userId != null}">
-    <c:redirect url="/user/${userId}"/>
+<c:if test="${userId == null}"> <!--//== сравнивает, != не равно-->
+    <c:redirect url="/registration/${userId}"/>
 </c:if>
 
 <html>
 <head>
+    <link href="../css/style.css"  rel="stylesheet"/> <!--добавляем фото-->
     <title>Title</title>
 </head>
 <body>
 <!--c:-это обращение к библиотеке, затем пишем цикл:
 items- это коллекция в которой лежит список,
  var-это один элемент списка к которому мы будем обращаться, user-переменная-->
+
 <c:forEach items="${usersList}" var="user">
     <a href="/user/${user.id}"> <!--/ссылка, к-ая перекидывает на user.добавляем атрибут, его название-->
             ${user.username} <br>  <!--//условие цикла(добавляем атрибут, его название,
@@ -21,19 +23,34 @@ items- это коллекция в которой лежит список,
 </c:forEach>
 
 </body>
+<!--за ссылки отвечает ТЕГ <a,
+выводим список пользователей из Userов-->
+
 <a href="/users">
     Список пользователей
 </a>
-<c:if test="${role == 'ADMIN'}">
+<c:if test="${role == 'ADMIN'}"> <!--если роль верна  с Админом, то переход на Админ панель
+                                  //== сравнивает, != не равно-->
     <a href="/admin">
+
         Админ панель
     </a>
 </c:if>
-<a href="#">
-    Выход
+<a href="/settings">
+    Настройки
 </a>
 
+<a href="/logout">
+
+    Выход
+</a>
 <br> ${username} <br>
+
+
+<!--добавляем фото-->
+<div class="user-photo">
+    <img src="../${image}" alt="user-photo"/><br>
+</div>
 
 
 <c:if test="${thisIsMainUser == true}">

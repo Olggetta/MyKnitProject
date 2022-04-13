@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
+// Контроллеры соединяют сайт с базой данных, путем передачи ПОСТ
 @Controller
 @SessionAttributes({"userId", "role"})//анатация которая,подключает атрибуты сессии.
 // userId,role-это атрибуты
@@ -35,17 +36,16 @@ public class RegistrationController {
     public String checkInputData(
             @RequestParam("username") String username,
             @RequestParam("password") String password,
-            @RequestParam("repassword") String repassword,
             Model model
     ) {
-        String error = authorizeValidation.validateRegistrationData(username, password, repassword);
+        String error = authorizeValidation.validateRegistrationData(username, password);
 
         if (!error.isEmpty()) {
             model.addAttribute("error", error);
             return "register_page";
         } else {
             userService.save(username, password, RoleEnums.USER.name());
-            return "redirect:/";// redirect - это перенаправление на страницы
+            return "redirect:/"; // redirect -это перенаправление на страницы
         }
     }
 }

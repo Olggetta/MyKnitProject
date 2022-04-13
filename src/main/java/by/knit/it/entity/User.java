@@ -22,9 +22,12 @@ public class User {
     @Setter
     private String password;
     @Setter
-    private String repassword;
-    @Setter
     private String role;
+    @Setter
+    private String status;
+    @Setter
+    private String pathToImage;
+
 
 
 

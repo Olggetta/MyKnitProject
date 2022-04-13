@@ -25,6 +25,8 @@ public class Application {
     @Bean
     public CommandLineRunner commandLineRunner(@Autowired UserService userService) {
         return args -> {
+            //CommandLineRunner- позволяет использовать дополнительные параметры из main
+            //делаем проверку
             if (!userService.getUserByUsername("ADMIN").isPresent()) {
                 userService.save("ADMIN", "ADMIN", RoleEnums.ADMIN.name());
             }

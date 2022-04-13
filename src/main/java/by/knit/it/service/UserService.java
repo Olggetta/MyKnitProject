@@ -3,6 +3,7 @@ package by.knit.it.service;
 
 import by.knit.it.encoder.PasswordEncoder;
 import by.knit.it.entity.User;
+import by.knit.it.enums.StatusEnums;
 import by.knit.it.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,8 +24,14 @@ public class UserService {
         User user = new User();
         user.setUsername(username);
         user.setRole(role);
+        user.setStatus(StatusEnums.ACTIVE.name());
         user.setPassword(PasswordEncoder.encodePassword(password));
         save(user);
+    }
+
+    public void updateUserStatusById(String status, String id) {
+
+        userRepository.updateUserStatusById(status, id);
     }
 
     public Optional<User> getUserByUsername(String username) {
@@ -36,5 +43,14 @@ public class UserService {
 
     public User getUserById(String id) { // создаем метод для вывода пользователей по Id
         return userRepository.getById(id);
+    }
+
+    public void deleteUserById(String id) {
+        userRepository.deleteById(id);
+    }
+
+    public void updatePathToImageById(String path, String id) {
+        userRepository.updateUserPathToImageById(path, id);//добавляем фото
+
     }
 }

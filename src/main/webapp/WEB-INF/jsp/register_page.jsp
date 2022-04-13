@@ -25,15 +25,17 @@ ${error}<br>
         <label for="exampleInputPassword1" class="form-label">Password</label>
         <input type="password" name="password" class="form-control" id="exampleInputPassword1">
     </div>
-    <div class="mb-3">
-        <label for="exampleInputPassword1" class="form-label">Repeat password</label>
-        <input type="password" name="repassword" class="form-control" id="exampleInputPassword2">
-    </div>
+
     <button type="submit" class="btn btn-primary">Submit</button>
-    <a href="/login">
-        <button class="btn btn-primary">Login</button>
-    </a>
+
 </form>
+<!--за ссылки отвечает ТЕГ <a,
+button - это кнопка на сайте, с названием Логин,
+"btn btn-primary" - это класс СС -шрифт-->
+
+<a href="/login">
+    <button class="btn btn-primary">Login</button>
+</a>
 </body>
 </html>
 

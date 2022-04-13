@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> <!--библиотека Jsp для исп. циклов-->
+
 <c:if test="${userId != null}">
     <c:redirect url="/user/${userId}"/>
 </c:if>
@@ -28,9 +29,13 @@ ${error}<br>
         <input type="password" name="password" class="form-control" id="exampleInputPassword1">
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
-    <a href="/registration">
-        <button class="btn btn-primary">Registration</button>
-    </a>
+
 </form>
+<!--за ссылки отвечает ТЕГ <a,
+button - это кнопка на сайте, с названием РЕГИСТРАЦИЯ,
+"btn btn-primary" - это класс СС -шрифт-->
+<a href="/registration">
+    <button class="btn btn-primary">Registration</button>
+</a>
 </body>
 </html>

@@ -38,8 +38,8 @@ public class LoginController {
             Model model// позволяет нам додавлять атрибуты
     ) {
         String error = authorizeValidation.validateLoginData(username, password);//делаем проверку,
-        // если данные не правильные, то возвращаемся на login_page,
-        // если правильные - то перенаправляем на home страницу
+        // если данные не пустые, то возвращаемся на login_page,
+        // если пустые - то перенаправляем на home страницу
 
         if (!error.isEmpty()) {
             model.addAttribute("error", error);//"error"-название атрибута, error-сам атрибут
