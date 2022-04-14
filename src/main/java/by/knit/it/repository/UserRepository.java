@@ -16,6 +16,7 @@ import java.util.Optional;
 @Transactional
 public interface UserRepository extends JpaRepository<User, String> {
 
+    //Поиск пользователя по его имени пользователя(username)
     @Query("from User where username =:username")
     Optional<User> findUserByUsername(@Param("username") String username);
 
@@ -24,11 +25,12 @@ public interface UserRepository extends JpaRepository<User, String> {
     @Modifying //ставится над теми методами, к-ые что-то меняют в БД
     void updateUserStatusById(@Param("status") String status, @Param("id") String id);
 
-    //добавляем фото
+    //добавляем путь для изображения
     @Query("update User set pathToImage =:path where id =:id")
     @Modifying
     void updateUserPathToImageById(@Param("path") String path, @Param("id") String id);
 
+    //Поиск имени пользователя по введенному значению
     @Query("from User where upper(username) like %:inputText%")
     List<User> searchUserUsernameByInputText(@Param("inputText") String inputText);
     // метод для поиска юзеров

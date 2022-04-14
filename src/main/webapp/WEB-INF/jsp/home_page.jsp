@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> <!--библиотека Jsp для исп. циклов-->
 
-<c:if test="${userId == null}"> <!--//== сравнивает, != не равно-->
+<c:if test="${userId == null}"> <!--//не могут зайти не зарегистрированные пользователи-->
     <c:redirect url="/registration/${userId}"/>
 </c:if>
 
@@ -36,6 +36,11 @@ items- это коллекция в которой лежит список,
     <a href="/news">
         Новости
     </a>
+
+    <a href="/topics">
+        Обсуждения
+    </a>
+
 
 </a>
 <c:if test="${role == 'ADMIN'}"> <!--если роль верна  с Админом, то переход на Админ панель
