@@ -28,7 +28,4 @@ public class User {
     @Setter
     private String pathToImage;
 
-
-
-
 }

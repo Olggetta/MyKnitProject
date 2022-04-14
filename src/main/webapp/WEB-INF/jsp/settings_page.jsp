@@ -11,11 +11,14 @@
     Выберите фото<br>
     <input type="file" name="image"><br>
     <button type="submit">Сохранить</button>
+    <a href="/logout">
+        Выход
+    </a>
 
-    <button type="submit">Выход</button>
-    <a href="/home_page">home_page</a>
-    <c:if test="${userId != null}">
-        <c:redirect url="/home_page/${userId}"/>
+
+
+    <c:if test="${userId == null}">
+        <c:redirect url="/register_page/${userId}"/>
     </c:if>
 </form>
 </body>

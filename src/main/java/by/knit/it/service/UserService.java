@@ -41,8 +41,8 @@ public class UserService {
         return userRepository.findAll(); // создаем метод для вывода зарегистрировавшихся пользователей
     }
 
-    public User getUserById(String id) { // создаем метод для вывода пользователей по Id
-        return userRepository.getById(id);
+    public Optional<User> getUserById(String id) { // создаем метод для вывода пользователей по Id
+    return userRepository.findById(id);
     }
 
     public void deleteUserById(String id) {
@@ -50,7 +50,7 @@ public class UserService {
     }
 
     public void updatePathToImageById(String path, String id) {
-        userRepository.updateUserPathToImageById(path, id);//добавляем фото
+        userRepository.updateUserPathToImageById(path, id);//добавляем путь к фото
 
     }
 }
