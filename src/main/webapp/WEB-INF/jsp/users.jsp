@@ -5,6 +5,17 @@
     <title>Title</title>
 </head>
 <body>
+<a href="/user/${userId}">
+    Профиль
+
+</a>
+
+<form method="post" action="/users">
+    <input type="text" name="userSearch"/>
+    <button type="submit">Найти</button>
+</form>
+<br><br>
+
 <!--c:-это обращение к библиотеке, затем пишем цикл:items- это коллекция в которой лежит список,
  // var-это один элемент списка к которому мы будем обращаться, user-переменная-->
  <c:forEach items="${usersList}" var="user">

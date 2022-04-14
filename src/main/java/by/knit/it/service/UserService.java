@@ -24,13 +24,14 @@ public class UserService {
         User user = new User();
         user.setUsername(username);
         user.setRole(role);
+        user.setPathToImage("user-images/user-profile-img.png");
         user.setStatus(StatusEnums.ACTIVE.name());
         user.setPassword(PasswordEncoder.encodePassword(password));
         save(user);
+
     }
 
     public void updateUserStatusById(String status, String id) {
-
         userRepository.updateUserStatusById(status, id);
     }
 
@@ -51,6 +52,10 @@ public class UserService {
 
     public void updatePathToImageById(String path, String id) {
         userRepository.updateUserPathToImageById(path, id);//добавляем путь к фото
+    }
 
+    //  для поиска юзеров
+    public List<User> searchUserUsernameByInputText(String inputText) {
+        return userRepository.searchUserUsernameByInputText(inputText);
     }
 }

@@ -20,23 +20,20 @@
     <a href="/user/${user.id}"> <!--добавляем ссылку на каждого Usera -->
             ${user.username}
     </a>
-    <a href="/delete/${user.id}"> <!--добавляем кнопки (удалить/заблокировать)-->
-        Delete
-    </a> <br>
+<form action="/admin-action" method="post">
+    <button type="submit" name="delete ${user.id}">Delete</button>
 
-    <!--делаем проверку. Если User-Aсtive,то появляется кнопка Block-->
+
+
     <c:if test="${user.status == 'ACTIVE'}">
-        <a href="/block/${user.id}">
-            Block
-        </a> <br>
+    <button type="submit" name="block ${user.id}">Block</button>
     </c:if>
 
-    <!--делаем проверку. Если User-ACtive,то появляется кнопка Block-->
     <c:if test="${user.status == 'BLOCKED'}">
-        <a href="/unblock/${user.id}">
-            Unblock
-        </a> <br>
+        <button type="submit" name="unblock ${user.id}">Unblock</button>
+        <br>
     </c:if>
+</form>
 
 </c:forEach>
 

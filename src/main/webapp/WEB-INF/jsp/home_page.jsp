@@ -25,9 +25,18 @@ items- это коллекция в которой лежит список,
 </body>
 <!--за ссылки отвечает ТЕГ <a,
 выводим список пользователей из Userов-->
+<a href="/catalog">
+    Каталог изделий
+</a>
+
 
 <a href="/users">
+
     Список пользователей
+    <a href="/news">
+        Новости
+    </a>
+
 </a>
 <c:if test="${role == 'ADMIN'}"> <!--если роль верна  с Админом, то переход на Админ панель
                                   //== сравнивает, != не равно-->
@@ -38,6 +47,9 @@ items- это коллекция в которой лежит список,
 </c:if>
 <a href="/settings">
     Настройки
+</a>
+<a href="/user/${userId}">
+    Профиль
 </a>
 
 <a href="/logout">
@@ -54,11 +66,11 @@ items- это коллекция в которой лежит список,
 
 
 <c:if test="${thisIsMainUser == true}">
-    This is main user page
+    This is main user page <!--это главная страница пользователя-->
 </c:if>
 
 <c:if test="${thisIsMainUser == false}">
-    This is not main user page
+    This is not main user page <!--это не главная страница пользователя-->
 </c:if>
 
 </body>
