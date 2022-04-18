@@ -47,7 +47,7 @@ public class UserService {
     }
 
     public void deleteUserById(String id) {
-        userRepository.deleteById(id);
+        userRepository.deleteById(id);// удаляем комментарии
     }
 
     public void updatePathToImageById(String path, String id) {

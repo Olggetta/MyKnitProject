@@ -1,6 +1,7 @@
 package by.knit.it.controllers;
 
 import by.knit.it.entity.User;
+import by.knit.it.service.TopicCommentsService;
 import by.knit.it.service.TopicService;
 import by.knit.it.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,11 +15,17 @@ import java.util.Optional;
 @SessionAttributes({"userId", "role"})
 public class TopicController {
 
-    @Autowired
-    private TopicService topicService;
+    private final TopicService topicService;
+    private final UserService userService;
+    private final TopicCommentsService topicCommentsService;
+
 
     @Autowired
-    private UserService userService;
+    public TopicController(TopicService topicService, UserService userService, TopicCommentsService topicCommentsService) {
+        this.topicService = topicService;
+        this.userService = userService;
+        this.topicCommentsService = topicCommentsService;
+    }
 
 
     @GetMapping("/topics") //выводит страницу
@@ -52,8 +59,9 @@ public class TopicController {
     }
 
     @GetMapping("/topic/{id}")
-    public String showSingleTopicPage(@PathVariable("id") String id, Model model) {
-        model.addAttribute("topic", topicService.getTopicById(id));
+    public String showSingleTopicPage(@PathVariable("id") String topicId, Model model) {
+        model.addAttribute("topic", topicService.getTopicById(topicId));
+        model.addAttribute("comments", topicCommentsService.getCommentsListByTopicId(topicId));
         return "topic_page";
     }
 }
