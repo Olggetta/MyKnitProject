@@ -15,25 +15,12 @@ public class KnittedProductService {
     private KnittedProductRepository repository;
 
     public void save(
-            String knittedProductId,
-            String authorUsername,
-            String authorId,
-            String product,
-            String photo,
-            String status,
-            String description,
-            String order
-
+            String pathToImage,
+            String description
     ) {
         KnittedProduct knittedProduct = new KnittedProduct();
-        knittedProduct.setKnittedProductId(knittedProductId);
-        knittedProduct.setAuthorUsername(authorUsername);
-        knittedProduct.setAuthorId(authorId);
-        knittedProduct.setProduct(product);
-        knittedProduct.setPhoto(photo);
-        knittedProduct.setStatus(status);
+        knittedProduct.setPathToImage(pathToImage);
         knittedProduct.setDescription(description);
-        knittedProduct.setOrder(order);
         knittedProduct.setCreatedDate(LocalDateTime.now());
         save(knittedProduct);
     }

@@ -10,22 +10,23 @@ import javax.persistence.Id;
 
 @Entity
 @Getter
-public class User {
-
+public class Order {
     @Id
     @GeneratedValue(generator = "uuid-generator")
     @GenericGenerator(name = "uuid-generator", strategy = "uuid")
     private String id;
-
-    @Setter
-    private String username;
-    @Setter
-    private String password;
-    @Setter
-    private String role;
     @Setter
     private String status;
     @Setter
-    private String pathToImage;
+    private String customername;
+    @Setter
+    private String customerphone;
+    @Setter
+    private String customeraddress;
+    @Setter
+    private String customercomment;
+
+
+
 
 }

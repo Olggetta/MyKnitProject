@@ -6,10 +6,11 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 @Controller
 @SessionAttributes({"userId", "role"})
-public class KnittedProductController {
 
-    @GetMapping("/knitted_product")
-    public String showKnittedProductPage() {
-        return "knitted_product_page";
+    public class OrderController {
+
+    @GetMapping("/order")
+    public String showOrderPage() {
+        return "order_page";
     }
 }

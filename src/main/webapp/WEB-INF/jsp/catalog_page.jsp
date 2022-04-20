@@ -14,8 +14,14 @@
 ${error}<br>
 <form method="post" action="/catalog">
 
-    <button type="submit">Описание изделия</button>
-    <button type="submit">Заказать изделие</button>
+    <a href="/knitted_product">
+        Вязанные изделия
+    </a>
+
+    <a href="/order">
+        Закать изделие
+    </a>
+
 
     <a href="/news">
         Новости/Акции
