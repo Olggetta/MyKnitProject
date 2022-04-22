@@ -21,7 +21,8 @@
 </a>
 </a> <br><br>
 
-<c:forEach items="${messagesList}" var="message"> <!--messagesList- передает все сообщения,
+<c:forEach items="${messagesList}" var="message">
+    <!--messagesList- передает все сообщения,
     var="message"> - отдельное одно сообщение-->
     <a href="/user/${message.ownerId}">
             ${message.ownerNickname}

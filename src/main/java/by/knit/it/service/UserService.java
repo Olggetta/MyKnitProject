@@ -17,6 +17,7 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;//создает доступ к UserRepository
 
+
     private void save(User user) {
         userRepository.save(user);
     }
@@ -38,6 +39,7 @@ public class UserService {
     public Optional<User> getUserByUsername(String username) {
         return userRepository.findUserByUsername(username);
     }
+
     public List<User> getAllUsers() {
         return userRepository.findAll(); // создаем метод для вывода зарегистрировавшихся пользователей
     }
@@ -58,4 +60,6 @@ public class UserService {
     public List<User> searchUserUsernameByInputText(String inputText) {
         return userRepository.searchUserUsernameByInputText(inputText);
     }
+
+
 }

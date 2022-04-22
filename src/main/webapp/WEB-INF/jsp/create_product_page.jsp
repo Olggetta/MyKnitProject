@@ -9,14 +9,13 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Вязанные изделия</title>
+    <title>Создать изделие</title>
 </head>
 <body>
 ${error}<br>
-<form method="post" action="/knitted_product">
-    <br>
-    <button type="submit">Описание изделия</button>
-    <button type="submit">Заказать изделие</button>
+<form action="/admin-action" method="post">
+    <button type="submit" name="create_product ${user.id}">Создать изделие</button>
+
 
     <a href="/user/${userId}">
 

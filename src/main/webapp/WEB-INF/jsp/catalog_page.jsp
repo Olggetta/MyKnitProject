@@ -13,18 +13,12 @@
 <body>
 ${error}<br>
 <form method="post" action="/catalog">
-
-    <a href="/knitted_product">
-        Вязанные изделия
+    <a href="/product_page">
+        Выбрать изделие
     </a>
 
     <a href="/order">
-        Закать изделие
-    </a>
-
-
-    <a href="/news">
-        Новости/Акции
+        Заказать изделие
     </a>
 
     <a href="/user/${userId}">

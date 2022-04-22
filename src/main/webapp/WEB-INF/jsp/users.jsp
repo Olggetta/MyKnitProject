@@ -7,7 +7,7 @@
 
 <html>
 <head>
-    <title>Title</title>
+    <title>все пользователи</title>
 </head>
 <body>
 <a href="/user/${userId}">
@@ -25,7 +25,7 @@
  // var-это один элемент списка к которому мы будем обращаться, user-переменная-->
  <c:forEach items="${usersList}" var="user">
 
-<!-- если id равно,то выводятся Userа, если нет-то нет-->
+<!-- id равниваются, если они верны выводятся Userа, если нет-то нет-->
 <c:if test="${userId != user.id}">
     <a href="/user/${user.id}">
             ${user.username} <br>
