@@ -12,7 +12,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 
-
 @SpringBootApplication
 @EntityScan("by.knit.it.entity")
 @EnableJpaRepositories("by.knit.it.repository")

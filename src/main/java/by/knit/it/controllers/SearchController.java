@@ -16,7 +16,7 @@ public class SearchController {
     private UserService userService;
 
     @PostMapping("/users")
-    public String searchUsers (@RequestParam("userSearch")String userSearch, Model model){
+    public String searchUsers(@RequestParam("userSearch") String userSearch, Model model) {
         //считали параметры с юзерпоиска,
         // далее идем в Репозиторийи создаем метод для поиска юзеров
         //далее в Юзерсервис и там пишем метод

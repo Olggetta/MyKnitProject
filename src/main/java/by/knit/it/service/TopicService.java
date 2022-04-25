@@ -33,12 +33,12 @@ public class TopicService {
 
 
     //сохраняет обсуждения
-    private void save(Topic topic){
+    private void save(Topic topic) {
         topicRepository.save(topic);
     }
 
     //выводит лист всех обсуждений
-    public List<Topic> getAllTopics(){
+    public List<Topic> getAllTopics() {
         return topicRepository.findAll();
     }
 

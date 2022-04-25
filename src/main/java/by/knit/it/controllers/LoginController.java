@@ -26,6 +26,7 @@ public class LoginController {
         this.userService = userService;
         this.authorizeValidation = authorizeValidation;
     }
+
     @GetMapping({"/", "/login"})//контроллер, который рисует страницу
     public String showLoginPage() {
         return "login_page";

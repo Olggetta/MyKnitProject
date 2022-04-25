@@ -15,14 +15,14 @@ public class OrderService {
 
     public void save(
             String status,
-            String customername,
+            String customerName,
             String customerphone,
             String customeraddress,
             String customercomment
     ) {
         Order order = new Order();
         order.setStatus(status);
-        order.setCustomername(customername);
+        order.setCustomername(customerName);
         order.setCustomerphone(customerphone);
         order.setCustomeraddress(customeraddress);
         order.setCustomercomment(customercomment);

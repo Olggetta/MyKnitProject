@@ -27,6 +27,4 @@ public class Order {
     private String customercomment;
 
 
-
-
 }

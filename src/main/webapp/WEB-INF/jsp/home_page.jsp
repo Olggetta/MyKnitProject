@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> <!--библиотека Jsp для исп. циклов-->
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!--библиотека Jsp для исп. циклов-->
 
 <c:if test="${userId == null}"> <!--//не могут зайти не зарегистрированные пользователи-->
     <c:redirect url="/registration/${userId}"/>
@@ -7,7 +8,7 @@
 
 <html>
 <head>
-    <link href="../css/style.css"  rel="stylesheet"/> <!--добавляем фото-->
+    <link href="../css/style.css" rel="stylesheet"/> <!--добавляем фото-->
     <title>Title</title>
 </head>
 <body>
@@ -43,8 +44,8 @@ items- это коллекция в которой лежит список,
 
 
 </a>
-<c:if test="${role == 'ADMIN'}"> <!--если роль верна  с Админом, то переход на Админ панель
-                                  //== сравнивает, != не равно-->
+<c:if test="${role == 'ADMIN'}"> <!--если роль верна с Админом, то переход на Админ панель
+    //== сравнивает, != не равно-->
     <a href="/admin">
 
         Админ панель

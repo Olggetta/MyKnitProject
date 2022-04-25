@@ -1,7 +1,5 @@
 package by.knit.it.controllers;
 
-import by.knit.it.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
@@ -14,8 +12,8 @@ public class CatalogController {
     public String showCatalogPage() {
         return "catalog_page";
     }
-   // @PostMapping("/catalog")
-   // public String;
+    // @PostMapping("/catalog")
+    // public String;
 
 
 }

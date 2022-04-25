@@ -21,6 +21,7 @@ public class UserService {
     private void save(User user) {
         userRepository.save(user);
     }
+
     public void save(String username, String password, String role) {
         User user = new User();
         user.setUsername(username);
@@ -45,7 +46,7 @@ public class UserService {
     }
 
     public Optional<User> getUserById(String id) { // создаем метод для вывода пользователей по Id
-    return userRepository.findById(id);
+        return userRepository.findById(id);
     }
 
     public void deleteUserById(String id) {

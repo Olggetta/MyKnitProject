@@ -1,10 +1,8 @@
 package by.knit.it.controllers;
 
 
-
 import by.knit.it.service.CreateProductService;
 import by.knit.it.service.ProductService;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -35,4 +33,4 @@ public class ProductController {
         //как только мы создадим поле для обсуждения,появится возможность заполнить данные
         return "create_product_page";
     }
-    }
+}

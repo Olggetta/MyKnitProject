@@ -57,9 +57,10 @@ public class HomeController {
         model.addAttribute("usersList", userList);//добавляем атрибут и его название
         return "users"; // возвращаем страницу(и идем ее создавать в JSP)
     }
+
     private boolean checkIfThisMainUser(String pathId, String currentId) {
-       return pathId.equals(currentId);
-  }
+        return pathId.equals(currentId);
+    }
 }
 
 
@@ -67,17 +68,14 @@ public class HomeController {
 //        //который будет выводить всех зарегистрированных пользователей(getAllUsers)
 
 
-
 //    @GetMapping("/user/{id}")
 //    public String showHomePage(@PathVariable("id") String id, Model model) {
 //
 
 
+// String username = userService.getUserById(id).getUsername();// достаем User по Id.
+// Для этого нам нужно написать в UserService метод getUserById и применяем его.
+//getUserName-достали Usera
 
-
-   // String username = userService.getUserById(id).getUsername();// достаем User по Id.
-    // Для этого нам нужно написать в UserService метод getUserById и применяем его.
-    //getUserName-достали Usera
-
-       // model.addAttribute("username", username); // и закинули его (Usera) на страничку
-       // return "home_page";
+// model.addAttribute("username", username); // и закинули его (Usera) на страничку
+// return "home_page";

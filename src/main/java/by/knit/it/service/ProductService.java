@@ -1,8 +1,6 @@
 package by.knit.it.service;
 
 import by.knit.it.entity.Product;
-
-
 import by.knit.it.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -30,7 +28,7 @@ public class ProductService {
     }
 
     private void save(Product product) {
-       productRepository.save(product);//метод, который все это сохраняет
+        productRepository.save(product);//метод, который все это сохраняет
 
     }
 

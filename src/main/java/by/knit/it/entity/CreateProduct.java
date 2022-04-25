@@ -17,7 +17,7 @@ public class CreateProduct {
     @GenericGenerator(name = "uuid-generator", strategy = "uuid")
     private String id;
     @Setter
-    private String productname;
+    private String productName;
     @Setter
     private String pathToImage;
     @Setter
